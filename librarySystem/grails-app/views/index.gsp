@@ -1,78 +1,53 @@
 <!doctype html>
 <html>
 <head>
+		<asset:stylesheet src="home.css"/>
     <meta name="layout" content="main"/>
     <title>Welcome to Grails</title>
 
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
 </head>
 <body>
-    <content tag="nav">
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Application Status <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Environment: ${grails.util.Environment.current.name}</a></li>
-                <li><a href="#">App profile: ${grailsApplication.config.grails?.profile}</a></li>
-                <li><a href="#">App version:
-                    <g:meta name="info.app.version"/></a>
-                </li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Grails version:
-                    <g:meta name="info.app.grailsVersion"/></a>
-                </li>
-                <li><a href="#">Groovy version: ${GroovySystem.getVersion()}</a></li>
-                <li><a href="#">JVM version: ${System.getProperty('java.version')}</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Artefacts <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Controllers: ${grailsApplication.controllerClasses.size()}</a></li>
-                <li><a href="#">Domains: ${grailsApplication.domainClasses.size()}</a></li>
-                <li><a href="#">Services: ${grailsApplication.serviceClasses.size()}</a></li>
-                <li><a href="#">Tag Libraries: ${grailsApplication.tagLibClasses.size()}</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Installed Plugins <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-                    <li><a href="#">${plugin.name} - ${plugin.version}</a></li>
-                </g:each>
-            </ul>
-        </li>
-    </content>
-
-    <div class="svg" role="presentation">
-        <div class="grails-logo-container">
-            <asset:image src="grails-cupsonly-logo-white.svg" class="grails-logo"/>
-        </div>
-    </div>
-
+    
     <div id="content" role="main">
-        <section class="row colset-2-its">
-            <h1>Welcome to Grails</h1>
+     
+            <h1>Welcome to Grails, Lizzie!</h1>
 
             <p>
-                Congratulations, you have successfully started your first Grails application! At the moment
-                this is the default page, feel free to modify it to either redirect to a controller or display
-                whatever content you may choose. Below is a list of controllers that are currently deployed in
-                this application, click on each to execute its default action:
+                Below are the buttons to take you to each of the controllers:
             </p>
 
-            <div id="controllers" role="navigation">
+            <div class="first">
                 <h2>Available Controllers:</h2>
-                <ul>
-                    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                        <li class="controller">
-                            <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
-                        </li>
-                    </g:each>
-                </ul>
+                <button type="button" class="btn btn-success">
+		<g:link controller="book" action="create">Add a Book</g:link>
+		</button>
             </div>
-        </section>
+    <div class="second">
+                <button type="button" class="btn btn-success">
+		<g:link controller="bookReview" action="create">Add a Book Review</g:link>
+		</button>
+            </div>
+<div class="third">
+                <button type="button" class="btn btn-success">
+		<g:link controller="course" action="create">Add a Course</g:link>
+		</button>
+            </div>
+<div class="fourth">
+                <button type="button" class="btn btn-success">
+		<g:link controller="librarian" action="create">Add a Librarian</g:link>
+		</button>
+            </div>
+<div class="fifth">
+                <button type="button" class="btn btn-success">
+		<g:link controller="library" action="create">Add a Library</g:link>
+		</button>
+            </div>
+<div class="sixth">
+                <button type="button" class="btn btn-success">
+		<g:link controller="student" action="create">Add a Student</g:link>
+		</button>
+            </div>
     </div>
 
 </body>
